@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>babble Game</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .gameBox{
+        position:relative;
+        /*with respect this box you want to allign bubble so using relativw*/
+        width:700px;
+        height:600px;
+        border:2px solid black;
+
+    }
+    .ballonBox{
+        /*ballon means its a box eddara olage bubble barutte*/
+        position:absolute;
+        /*e box gamebox olage barbeku position:absolute*/
+
+        
+    }
+    .ballon{
+        position:absolute;
+        /*absolute erodirnda yalli bekadre align madbhudu*/
+        object-fit:cover;
+    }
+
+.text{
+    position:absolute;
+    top:30px;
+    left:40px;
+    font-size:1.5rem;
+    /*create a text box*/
+}
+
+    </style>
+</head>
+<body>
+    <!--to down approch first ui 
+    bottom up first backend-->
+    <div class="gameBox"></div>
+    <script>
+    const gameBox=document.querySelector(".gameBox")
+    const imageNames=['bubble1.png','bubble2.jpeg','bubble3.jpeg','bubble4.jpeg']
+    const img=new Image(100)
+    // 100 is width
+    // Image is constructure
+    img.src=`assests/images/${imageNames[0]}`
+    const div=document.createElement('div')
+    div.classList.add("ballonBox")
+    // ballonBox anno class anna div ge add madide
+    img.classList.add("ballon")
+    // div na child agi img annu hackidare
+    div.appendChild(img)
+    // div anna gamebox ge hachabeku
+    gameBox.appendChild(div)
+    // div.innerHTML=`<p class="text">xxx</p>`
+    // above hakidre div olagina image hogutte text barutte
+    div.innerHTML+=`<p class="text">xxx</p>`
+    </script>
+</body>
+</html>
